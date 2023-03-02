@@ -1,17 +1,11 @@
-variable "instance_name" {
-  description = "Value of the Name tag for the EC2 instance"
+variable "bucket_name" {
+  description = "S3 through terraform"
   type        = string
-  default     = "InstanceNameCreatedUsingVar"
+  default     = "sirsendus3bucketfordevops"
 }
 
-variable "vpc_name" {
-  description = "Value of the Name tag for the VPC"
+variable "region_name" {
+  description = "region for s3"
   type        = string
-  default     = "VPCnameCreatedUsingVariable"
-}
-
-variable "subnet_vpc" {
-  description = "Value of the Name tag for the VPC"
-  type        = string
-  default     = "SubnetnameCreatedUsingVariable"
+  default     = "us-west-2"
 }
