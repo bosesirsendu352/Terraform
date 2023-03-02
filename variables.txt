@@ -1,11 +1,6 @@
-variable "bucket_name" {
-  description = "S3 through terraform"
+variable "ec2_name" {
+  description = "ec2 with IAM"
   type        = string
-  default     = "sirsendus3bucketfordevops"
+  default     = "sirsenduec2instance"
 }
 
-variable "region_name" {
-  description = "region for s3"
-  type        = string
-  default     = "us-west-2"
-}
