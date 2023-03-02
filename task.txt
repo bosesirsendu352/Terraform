@@ -1,0 +1,3 @@
+Create a terraform script that will create an application server and the image should come from golden image with one 2gb data disk attahced .
+the security group should be created through variable files allowing only http port for the application the instance will be launched without a key pair and without
+any ssh access.
