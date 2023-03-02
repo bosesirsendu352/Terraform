@@ -10,22 +10,15 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.region_name
+  region  = "us-east-2"
 }
-# Creating bucket through terraform
+# Creating iam user
 
-resource "aws_s3_bucket_acl" "my_bucket" {
-  bucket = var.bucket_name
-  acl    = "public"
+resource "aws_iam_user" "user1" {
+  name = var.user_name
+}
 
-  tags = {
-    Name = var.bucket_name
-  }
-  website {
-    index_document = "index.html"
-  }
-
-  versioning {
-    enabled = true
-  }
+resource "aws_iam_user_policy_attachment" "user1_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+  user       = aws_iam_user.user1.name
 }
