@@ -1,6 +1,4 @@
-variable "ec2_name" {
-  description = "ec2 with IAM"
-  type        = string
-  default     = "sirsenduec2instance"
+variable "user_name" {
+  type    = string
+  default = "user1"
 }
-
