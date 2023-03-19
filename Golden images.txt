@@ -1,0 +1,28 @@
+# Configure the AWS provider
+provider "aws" {
+  region = "us-west-2"
+}
+
+# Create a resource group
+resource "aws_instance" "app_server" {
+  ami           = "ami-0d2017e886fc2c0ab" 
+  instance_type = "t2.micro"
+  
+
+  root_block_device {
+    volume_type = "gp2"
+    volume_size = 2
+  }
+
+  # Create a data disk and attach it to the instance
+  ebs_block_device {
+    device_name = "/dev/sdb"
+    volume_type = "gp2"
+    volume_size = 2
+  }
+
+  tags = {
+    Name = "my-app-server"
+  }
+}
+
